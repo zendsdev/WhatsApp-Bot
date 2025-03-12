@@ -1,0 +1,52 @@
+{
+  "_comment": "DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY PTERODACTYL PANEL - PTERODACTYL.IO",
+  "meta": {
+    "version": "PTDL_v2",
+    "update_url": null
+  },
+  "exported_at": "2023-04-01T12:00:00+07:00",
+  "name": "WhatsApp Bot",
+  "author": "masterweb",
+  "description": "Egg untuk menjalankan WhatsApp Bot berbasis Node.js.",
+  "features": null,
+  "docker_images": {
+    "Nodejs 18 (Stable)": "docker.io/node:18"
+  },
+  "file_denylist": [],
+  "startup": "{{STARTUP_CMD}}",
+  "config": {
+    "files": "{}",
+    "startup": "{\r\n    \"done\": [\r\n        \"Bot is now running!\"\r\n    ]\r\n}",
+    "logs": "{}",
+    "stop": "^^C"
+  },
+  "scripts": {
+    "installation": {
+      "script": "#!/bin/bash\r\napt update\r\napt install -y git curl unzip make gcc g++ python3 python3-dev\r\nnpm install npm@latest -g\r\ncd /mnt/server\r\nif [[ \"$(ls -A)\" ]]; then\r\n  echo \"Directory not empty; skipping git clone.\"\r\nelse\r\n  git clone https://github.com/YOUR_GITHUB_REPO.git .\r\nfi\r\nnpm install --production\r\necho \"Installation complete!\"",
+      "container": "node:18",
+      "entrypoint": "bash"
+    }
+  },
+  "variables": [
+    {
+      "name": "Startup Command",
+      "description": "Masukkan command untuk menjalankan bot Anda.",
+      "env_variable": "STARTUP_CMD",
+      "default_value": "node index.js",
+      "user_viewable": true,
+      "user_editable": true,
+      "rules": "required|string|max:100",
+      "field_type": "text"
+    },
+    {
+      "name": "Git Repository URL",
+      "description": "Masukkan URL Git repository tempat kode bot Anda berada.",
+      "env_variable": "GIT_ADDRESS",
+      "default_value": "https://github.com/YOUR_GITHUB_REPO.git",
+      "user_viewable": true,
+      "user_editable": true,
+      "rules": "required|string|max:200",
+      "field_type": "text"
+    }
+  ]
+}
