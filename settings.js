@@ -5,9 +5,9 @@ global.footer = "ZendsDev"
 global.session = "ZENDSDEV"
 
 const okeconnect = {
-  apikey: "30320481740859XXXX",
-  merchantid: "OK1XXX",
-  qrstring: "00020101021126670016COM.NOBUBANK..CO.QRISXXXXXXXXXXX"
+  apikey: "30320481740859XXXX", //api key okeconnect
+  merchantid: "OK1XXX", // merchant id okeconnect
+  qrstring: "00020101021126670016COM.NOBUBANK..CO.QRISXXXXXXXXXXX" //string Qris Payment
 }
 
 const alerts = {
