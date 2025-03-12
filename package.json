@@ -1,14 +1,14 @@
 {
-  "name": "botwaautoorder",
+  "name": "whatsapp-bot",
   "version": "1.0.0",
+  "description": "A simple WhatsApp bot using Node.js",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "author": "masterweb",
   "license": "ISC",
-  "description": "",
   "dependencies": {
     "@whiskeysockets/baileys": "^6.7.13",
     "axios": "^1.7.9",
